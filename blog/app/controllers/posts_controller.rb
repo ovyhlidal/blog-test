@@ -12,7 +12,6 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
-
     if @post.save
       redirect_to @post
     else
@@ -21,7 +20,7 @@ class PostsController < ApplicationController
   end
 
   def show
-
+    @user = current_user
   end
 
   def edit
