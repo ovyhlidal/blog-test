@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   resources :posts
   root 'posts#index'
   devise_for :user
+
+  mount LetterOpenerWeb::Engine, at: "/letter_opener"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
