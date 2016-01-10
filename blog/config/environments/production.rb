@@ -88,6 +88,6 @@ Rails.application.configure do
       :domain               => 'gmail.com',
       :user_name            =>  ENV["MAILGUN_USERNAME"],
       :password             =>  ENV["MAILGUN_PASSWORD"],
-      :authentication       => 'plain',
+      :authentication       => :login,
       :enable_starttls_auto => true  }
 end
