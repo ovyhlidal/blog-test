@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'posts#index'
  # devise_for :user
 
-  devise_for :users, controllers: { registrations: "registrations" }
+  devise_for :user, controllers: { registrations: "registrations" }
 
   mount LetterOpenerWeb::Engine, at: "/letter_opener"
 
