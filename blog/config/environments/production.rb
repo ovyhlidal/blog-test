@@ -76,38 +76,17 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  config.action_mailer.perform_deliveries = true
 
   config.action_mailer.default_url_options = { :host => 'https://blooming-caverns-6833.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-      :port      => 587,
-      :address    => "smtp.gmail.com",
-      :enable_starttls_auto => true,
-      :user_name => ENV["MAILGUN_USERNAME"],
-      :password  => ENV["MAILGUN_PASSWORD"]
-  }
-
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = false
-
-
-
-  # config.action_mailer.smtp_settings = {
-  #     :port      => 587,
-  #     :address    => "sandboxd35aa7b44c6a4cd49c4f1eb7a2538496.mailgun.org",
-  #     :user_name => ENV["MAILGUN_USERNAME"],
-  #     :password  => ENV["MAILGUN_PASSWORD"]
-  # }
-  #config.action_mailer.default_url_options = { :host => 'https://blooming-caverns-6833.herokuapp.com' }
-  ## config.action_mailer.delivery_method = :smtp
-  #config.action_mailer.perform_deliveries = true
-  #config.action_mailer.raise_delivery_errors = false
-
-
-
-
-
-
-
+      :address              => "smtp.gmail.com",
+      :port                 => 587,
+      :domain               => 'gmail.com',
+      :user_name            =>  ENV["MAILGUN_USERNAME"],
+      :password             =>  ENV["MAILGUN_PASSWORD"],
+      :authentication       => 'plain',
+      :enable_starttls_auto => true  }
 
 end
