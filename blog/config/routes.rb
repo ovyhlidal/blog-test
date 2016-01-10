@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :posts
   root 'posts#index'
-  devise_for :user
+ # devise_for :user
+
+  devise_for :users, controllers: { registrations: "registrations" }
 
   mount LetterOpenerWeb::Engine, at: "/letter_opener"
 
